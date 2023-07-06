@@ -60,6 +60,8 @@ function myFunction()
 		snumber_factor = 4;
 		yes_factor = 5;
 		
+		let sTemp = "";
+		
 		Total = (+document.getElementById("fnumber").value * fnumber_factor) + (+document.getElementById("snumber").value*snumber_factor);
 
 
@@ -68,8 +70,31 @@ function myFunction()
 		{
 			 Total = Total + yes_factor;
 		}
+
+		if (document.getElementById("fnumber").value >0)
+		{
+			 sTemp = document.getElementById("fnumber").value;
+			 sTemp = sTemp.concat(" Adults, ");
+			
+			if (document.getElementById("snumber").value > 0)
+			{
+				sTemp = sTemp.concat(document.getElementById("snumber").value);
+				sTemp = sTemp.concat(" Students");
+			}
+			
+			if (document.getElementById("optyes").checked)
+			{
+				sTemp = sTemp.concat("With Parking is ");
+			}
+			else
+			{
+				sTemp = sTemp.concat(" is ");
+			}
+			
+			sTemp = sTemp.concat(Total);
+		}
 		
-		document.getElementById("result").innerHTML = Total;
+		document.getElementById("result").innerHTML = sTemp;
 	}
 	
 </script>
