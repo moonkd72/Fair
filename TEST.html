@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Entry</h1>
+
+  <label for="fnumber">Adult:</label><br>
+  <select id="fnumber" name="snumber" value = 0 style="font-size:36px" onchange="myFunction()"><br>
+	<option value="0">0</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+</select>
+
+<br><br>
+
+  <label for="snumber">Student:</label><br>
+  <select id="snumber" name="snumber" value = 0 style="font-size:36px" onchange="myFunction()"><br>
+	<option value="0">0</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+</select>
+
+<br><br>
+
+<h1>Parking</h1>
+
+<input type="radio" id="optyes" name="foption" value="Yes" onchange="myFunction()">
+<label for="optyes" style="font-size:36px">YES</label>
+<input type="radio" id= "optno" name="foption" value="No" checked="checked" onchange="myFunction()">
+<label for="optno" style="font-size:36px">NO</label><br>
+
+<br><br>
+<!--<button onclick="myFunction()" style="font-size:36px">Calculate</button> -->
+
+<br><br>
+
+<div id="result" style="font-size:36px"></div>
+
+<script>
+
+function myFunction()
+	{
+		fnumber_factor = 3;
+		snumber_factor = 4;
+		yes_factor = 5;
+		
+		Total = (+document.getElementById("fnumber").value * fnumber_factor) + (+document.getElementById("snumber").value*snumber_factor);
+
+
+	
+		if (document.getElementById("optyes").checked)
+		{
+			 Total = Total + yes_factor;
+		}
+		
+		document.getElementById("result").innerHTML = Total;
+	}
+	
+</script>
+
+</body>
+</html>
